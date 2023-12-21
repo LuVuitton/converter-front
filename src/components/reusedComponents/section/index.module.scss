@@ -1,0 +1,13 @@
+@import "../../../style/variables.module.scss";
+.section {
+  padding: 2.3rem 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: $sizeMB) {
+  .section {
+    padding: 1rem;
+  }
+}

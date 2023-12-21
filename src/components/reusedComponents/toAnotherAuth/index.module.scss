@@ -1,0 +1,15 @@
+@import "../../../style/mixins.scss";
+@import "../../../style/variables.module.scss";
+
+.another {
+  text-align: center;
+  &Link {
+    color: $green;
+    position: relative;
+    @include animatedHover($green);
+  }
+  &Description {
+    padding-top: 0.5rem;
+    color: $greyText;
+  }
+}

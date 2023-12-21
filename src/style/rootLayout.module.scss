@@ -1,0 +1,12 @@
+@import "./variables.module.scss";
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  &Content {
+    flex: 1 1 auto;
+    padding-top: 55px;
+    min-height: 100vh;
+  }
+}

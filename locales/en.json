@@ -1,0 +1,29 @@
+{
+  "auth": {
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "email": "Email",
+    "userName": "User Name",
+    "password": "Password",
+    "passwordConfirm": "Confirm Password",
+    "alreadyHaveAccount": "If you already have an account, just log in.",
+    "dontHaveAccount": "New here? Sign up",
+    "dontHaveAccountDesc": "If you register, you'll be able to save something, I haven't figured out what yet. We'll see later",
+    "regestrationTitle": "Registration",
+    "alreadyHaveAccountDesc": "If you register, you'll be able to save something, I haven't figured out what yet. We'll see later",
+    "signInDesc": "Let's convert something",
+    "signUpDesc": "It means we're registering",
+    "errors": {
+      "required": "This field is required",
+      "passwordMin": "Password should be at least 6 characters long",
+      "complexity": "Password should contain a-z, A-Z, 1-9",
+      "usernameMin": "User Name should be at least 3 characters long",
+      "usernameMax": "User Name should not exceed 20 characters",
+      "passwordConfirm": "Passwords must match",
+      "passwordValidation": "Password needs number, upper, and lower case letter"
+    }
+  },
+  "header": {},
+
+  "footer": {}
+}

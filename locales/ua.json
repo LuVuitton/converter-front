@@ -1,0 +1,29 @@
+{
+  "auth": {
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "email": "Email",
+    "userName": "User Name",
+    "password": "Password",
+    "passwordConfirm": "Confirm Password",
+    "alreadyHaveAccount": "I already have an account. Log in",
+    "dontHaveAccount": "New here? Sign up",
+    "dontHaveAccountDesc": "(It's faster than you think)",
+    "regestrationTitle": "Registration",
+    "registrationDesc": "Here it is indeed fast",
+    "signInDesc": "There's a wild slogan here",
+    "errors": {
+      "required": "This field is required",
+      "passwordMin": "Password should be at least 6 characters long",
+      "spaces": "Password should not contain spaces",
+      "invalidCharacters": "Password can contain Latin characters ",
+      "complexity": "Password should contain a-z, A-Z, 1-9",
+      "usernameMin": "User Name should be at least 3 characters long",
+      "usernameMax": "User Name should not exceed 50 characters",
+      "password-confirm": "Passwords must match"
+    }
+  },
+  "header": {},
+
+  "footer": {}
+}

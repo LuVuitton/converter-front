@@ -1,0 +1,10 @@
+@import "../../../style/variables.module.scss";
+
+.errorMessage {
+  position: absolute;
+  top: 2.7rem;
+
+  left: 1px;
+  font-size: $textSmall;
+  color: $red;
+}

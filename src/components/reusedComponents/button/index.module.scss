@@ -1,0 +1,55 @@
+@import "../../../style/variables.module.scss";
+
+.btn {
+  padding: 7px 17px;
+  border: 2px solid $green;
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:active {
+    background-color: $green;
+  }
+}
+
+.btnText {
+  text-align: center;
+}
+.redBtn {
+  background-color: $white;
+  border-color: $red;
+  color: $red;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $red;
+      color: $white;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+  }
+}
+
+.greenBtn {
+  background-color: $green;
+  color: $white;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: transparent;
+      color: $green;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+  }
+}
+.disabled {
+  background-color: $grey;
+  border: 2px solid $greyText;
+  color: $greyText;
+  cursor: not-allowed;
+  &:hover {
+    background-color: $grey;
+
+    color: $greyText;
+  }
+}

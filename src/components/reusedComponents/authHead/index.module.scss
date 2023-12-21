@@ -1,0 +1,10 @@
+@import "../../../style/variables.module.scss";
+
+.head {
+  margin-bottom: 2rem;
+  text-align: center;
+  
+  &Description {
+    color: $greyText;
+  }
+}

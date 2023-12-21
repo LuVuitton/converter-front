@@ -1,0 +1,26 @@
+@import "../../../style/variables.module.scss";
+
+.input {
+  margin-bottom: 1.7rem;
+  width: 100%;
+  position: relative;
+
+  &Field {
+    resize: none;
+    border: 2px solid $line;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+
+    &:focus {
+      border-color: $green;
+      outline: none;
+    }
+  }
+  &Error {
+  }
+}
+
+.redBorder {
+  border: 2px solid $red;
+}
