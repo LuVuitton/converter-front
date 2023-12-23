@@ -34,14 +34,12 @@ const ConverterBlock = ({
 
   const mappedRest = [
     <option key="default" value="choose">
-      Выберите валюту
+      {"Выберите валюту"}
     </option>,
     ...rest.map((option) => (
-      <>
-        <option key={option} value={option}>
-          {option}
-        </option>
-      </>
+      <option key={option} value={option}>
+        {option}
+      </option>
     )),
   ];
 
@@ -70,10 +68,11 @@ const ConverterBlock = ({
       />
 
       <ul className={s.curLIst}>{mappedCur}</ul>
+
       <input
         type="number"
         onChange={(e) => onChangeValue(+e.target.value)}
-        value={value.toFixed(3)}
+        value={value}
         className={s.curInput}
       />
     </div>

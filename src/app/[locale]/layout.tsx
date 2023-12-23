@@ -10,6 +10,7 @@ import { notFound } from "next/navigation";
 import { Toaster } from "react-hot-toast";
 import { Footer, Header } from "@/components/modules";
 
+
 export const metadata: Metadata = {
   title: "CONVERTER",
   description: "it is converter",
@@ -35,12 +36,14 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReduxProvider>
-            <div className={s.wrapper}>
-              <Header />
-              <div className={s.wrapperContent}>{children}</div>
-              <Toaster position="top-right" />
-              <Footer />
-            </div>
+
+              <div className={s.wrapper}>
+                <Header />
+                <div className={s.wrapperContent}>{children}</div>
+                <Toaster position="top-right" />
+                <Footer />
+              </div>
+
           </ReduxProvider>
         </NextIntlClientProvider>
       </body>

@@ -1,5 +1,4 @@
 "use client";
-
 import { Rates } from "@/app/api/serverRequests/getRates";
 import { ConverterBlock } from "@/components/modules";
 import { CurrenciesOptions, getCurrencies } from "@/helpers/separateFavorites";
@@ -65,9 +64,9 @@ const Converter = ({ ratesData }: Converter) => {
         favoritesChanged={() => setRerender(!rerender)}
       />
       <AddToHistory
-        firstCurrency={firstCurrency}
+        firstСurrencyst={firstCurrency}
         firstValue={firstValue}
-        secondCurrency={secondCurrency}
+        secondСurrencyst={secondCurrency}
         secondValue={secondValue}
       />
     </>

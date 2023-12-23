@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { User } from "../user/user.api";
+import { BASE_URL_MAIN } from "../..";
 
-const BASE_URL = "http://localhost:3000/auth";
 
 export const authApiSlice = createApi({
   reducerPath: "auth",
-  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${BASE_URL_MAIN}/auth` }),
   endpoints: (builder) => ({
     registration: builder.mutation<AuthRes, AuthDto>({
       query: (registrationData) => ({
