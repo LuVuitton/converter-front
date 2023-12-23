@@ -1,10 +1,81 @@
-const Converter = ()=> {
+"use client";
 
+import { Rates } from "@/app/api/serverRequests/getRates";
+import { ConverterBlock } from "@/components/modules";
+import { CurrenciesOptions, getCurrencies } from "@/helpers/separateFavorites";
+import { useEffect, useState } from "react";
+import AddToHistory from "./addToHistory";
 
+const Converter = ({ ratesData }: Converter) => {
+  const [rerender, setRerender] = useState(true);
+  const [currenciesOptions, setCurrenciesOptions] =
+    useState<CurrenciesOptions | null>(null);
 
-    return <div>Converter!!!</div>
-}
+  const [firstValue, setFirstValue] = useState(1);
+  const [secondValue, setSecondValue] = useState(0);
 
+  const [firstCurrency, setFirstCurrency] = useState("USD");
+  const [secondCurrency, setSecondCurrency] = useState("UAH");
 
+  const onChangeFirstValue = (value: number) => {
+    const price = value / ratesData[firstCurrency];
+    const res = price * ratesData[secondCurrency];
+    setSecondValue(res);
+    setFirstValue(value);
+  };
 
-export default Converter
+  const onChangeSeconfValue = (value: number) => {
+    const res = (ratesData[firstCurrency] / ratesData[secondCurrency]) * value;
+    setSecondValue(value);
+    setFirstValue(res);
+  };
+
+  useEffect(() => {
+    onChangeSeconfValue(secondValue);
+  }, [firstCurrency]);
+
+  useEffect(() => {
+    onChangeFirstValue(firstValue);
+  }, [secondCurrency]);
+
+  useEffect(() => {
+    setCurrenciesOptions(getCurrencies(Object.keys(ratesData)));
+  }, [rerender]);
+
+  if (!currenciesOptions) {
+    return <div>Loading... </div>;
+  }
+
+  return (
+    <>
+      <ConverterBlock
+        value={firstValue}
+        onChangeCurrency={setFirstCurrency}
+        onChangeValue={onChangeFirstValue}
+        currency={firstCurrency}
+        currenciesOptions={currenciesOptions}
+        favoritesChanged={() => setRerender(!rerender)}
+      />
+      <ConverterBlock
+        value={secondValue}
+        onChangeCurrency={setSecondCurrency}
+        onChangeValue={onChangeSeconfValue}
+        currency={secondCurrency}
+        currenciesOptions={currenciesOptions}
+        favoritesChanged={() => setRerender(!rerender)}
+      />
+      <AddToHistory
+        firstCurrency={firstCurrency}
+        firstValue={firstValue}
+        secondCurrency={secondCurrency}
+        secondValue={secondValue}
+      />
+    </>
+  );
+};
+
+export default Converter;
+
+type Converter = {
+  ratesData: Rates;
+};

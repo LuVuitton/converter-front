@@ -1,0 +1,21 @@
+.cur {
+  &LIst {
+    display: flex;
+    gap: 4px;
+    &Item {
+      padding: 10px;
+      border: 1px solid green;
+      cursor: pointer;
+    }
+    &Active {
+      background-color: rgba(0, 128, 0, 0.813);
+    }
+  }
+
+  &Input {
+    width: 100px;
+    height: 100px;
+    border: 2px solid grey;
+    color: green;
+  }
+}

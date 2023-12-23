@@ -1,5 +1,8 @@
 import { Converter } from "@/components/modules";
+import { getRates } from "../api/serverRequests/getRates";
 
-export default function Home() {
-  return <Converter />;
+export default async function Home() {
+  const ratesData = await getRates();
+
+  return <Converter ratesData={ratesData.rates} />;
 }

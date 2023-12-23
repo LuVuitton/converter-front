@@ -1,5 +1,6 @@
 export { default as Button } from "./button";
 export { default as AuthHead } from "./authHead";
+export { default as Modal } from "./modal";
 
 export { default as Preloader } from "./preloader";
 export { default as Section } from "./section";
