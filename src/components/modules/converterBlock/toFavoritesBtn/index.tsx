@@ -28,7 +28,7 @@ const ToFavoriteBtn = ({ favorites, currency, callback }: Props) => {
   };
 
   const isFavorite = favorites.includes(currency);
-  const btnText = isFavorite ? `remove ${currency}` : `add ${currency}`;
+  const btnText = isFavorite ? `remove ${currency} from favorites` : `add ${currency} to favorites`;
   const btnCallback = isFavorite ? removeFavorite : addFavorite;
 
   return (

@@ -4,6 +4,8 @@ import { ConverterBlock } from "@/components/modules";
 import { CurrenciesOptions, getCurrencies } from "@/helpers/separateFavorites";
 import { useEffect, useState } from "react";
 import AddToHistory from "./addToHistory";
+import s from "./index.module.scss";
+import { Section } from "@/components/reusedComponents";
 
 const Converter = ({ ratesData }: Converter) => {
   const [rerender, setRerender] = useState(true);
@@ -47,28 +49,34 @@ const Converter = ({ ratesData }: Converter) => {
 
   return (
     <>
-      <ConverterBlock
-        value={firstValue}
-        onChangeCurrency={setFirstCurrency}
-        onChangeValue={onChangeFirstValue}
-        currency={firstCurrency}
-        currenciesOptions={currenciesOptions}
-        favoritesChanged={() => setRerender(!rerender)}
-      />
-      <ConverterBlock
-        value={secondValue}
-        onChangeCurrency={setSecondCurrency}
-        onChangeValue={onChangeSeconfValue}
-        currency={secondCurrency}
-        currenciesOptions={currenciesOptions}
-        favoritesChanged={() => setRerender(!rerender)}
-      />
-      <AddToHistory
-        firstСurrencyst={firstCurrency}
-        firstValue={firstValue}
-        secondСurrencyst={secondCurrency}
-        secondValue={secondValue}
-      />
+      <Section className={s.section}>
+        <div className={s.converter}>
+          <ConverterBlock
+            value={firstValue}
+            onChangeCurrency={setFirstCurrency}
+            onChangeValue={onChangeFirstValue}
+            currency={firstCurrency}
+            currenciesOptions={currenciesOptions}
+            favoritesChanged={() => setRerender(!rerender)}
+          />
+          <ConverterBlock
+            value={secondValue}
+            onChangeCurrency={setSecondCurrency}
+            onChangeValue={onChangeSeconfValue}
+            currency={secondCurrency}
+            currenciesOptions={currenciesOptions}
+            favoritesChanged={() => setRerender(!rerender)}
+          />
+        </div>
+      </Section>
+      <Section className={s.section}>
+        <AddToHistory
+          firstСurrencyst={firstCurrency}
+          firstValue={firstValue}
+          secondСurrencyst={secondCurrency}
+          secondValue={secondValue}
+        />
+      </Section>
     </>
   );
 };

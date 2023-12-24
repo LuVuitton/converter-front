@@ -1,0 +1,18 @@
+@import '../../../style/variables.module.scss';
+
+
+.section {
+    text-align: center;
+}
+
+.converter {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem ;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: $sizeMB) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

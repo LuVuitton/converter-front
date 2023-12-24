@@ -1,5 +1,30 @@
-.input {
-  input[type="text"] {
-    font-size: 5rem;
+@import "../../../style/variables.module.scss";
+
+.number {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  gap: 2px;
+
+  &Input {
+    width: 120px;
+    border: 2px solid $greyText;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 0.5rem;
+    border: 2px solid $line;
+    border-radius: 10px;
+
+    &:focus {
+      border-color: $green;
+      outline: none;
+    }
+  }
+
+  &Add {
+    position: relative;
+    top: 5px;
+    font-size: 1.2rem;
+    color: $greyText;
   }
 }

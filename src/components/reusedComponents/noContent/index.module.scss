@@ -1,0 +1,35 @@
+@import "../../../style/variables.module.scss";
+
+.noContent {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  color: $greyText;
+  text-align: center;
+  font-size: $textMedium;
+
+  &Icon {
+    animation: moveSmiley 0.7s forwards;
+    font-size: 2rem;
+  }
+
+  &Text {
+  }
+}
+
+@keyframes moveSmiley {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}

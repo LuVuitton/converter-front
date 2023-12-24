@@ -159,7 +159,6 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="email"],
 input[type="month"],
-input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
@@ -167,24 +166,12 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"],
-select:focus,
+select:focus,         
 textarea {
   font-size: 16px;
   line-height: 1rem;
 }
+input[type="number"] {
+  font-size: 2rem;
+}
 
-// .accordion-button:focus {
-//   box-shadow: none;
-//   border-color: none;
-//   border: none;
-//   background-color: none;
-// }
-
-// .accordion-flush .accordion-item .accordion-button,
-// .accordion-flush .accordion-item .accordion-button.collapsed {
-//   box-shadow: none;
-//   border-color: transparent;
-//   border: none;
-//   background-color: transparent;
-//   color: currentColor;
-// }
