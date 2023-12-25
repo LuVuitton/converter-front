@@ -16,6 +16,7 @@ import {
 } from "@/components/reusedComponents";
 import { Input } from "@/components/formComponents";
 import { SignUpFormSchema } from "./formScheme/SignUpFormSchema";
+import toast from "react-hot-toast";
 
 export default function SignUp() {
   const {
@@ -38,17 +39,21 @@ export default function SignUp() {
 
   const onSubmit: SubmitHandler<SignUpInputs> = (formData) => {
     const { passwordConfirm, ...registrationDto } = formData;
-    toSignUp(registrationDto);
+    toSignUp(registrationDto)
+      .unwrap()
+      .catch((err) => {
+        if (err.data.statusCode === 409) {
+          toast.error("user name already exists");
+        } else {
+          toast.error("somting went wrong");
+        }
+      });
   };
 
   if (registrationData.data) {
     const { token, ...userData } = registrationData.data;
     dispatch(setUserData(userData));
     dispatch(setIsLogged({ isLogged: true, token: token }));
-  }
-
-  if (registrationData.error && "data" in registrationData.error) {
-    // toast.error(registrationData.error.data.message);
   }
 
   return (

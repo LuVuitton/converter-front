@@ -5,7 +5,7 @@ import { CurrenciesOptions, getCurrencies } from "@/helpers/separateFavorites";
 import { useEffect, useState } from "react";
 import AddToHistory from "./addToHistory";
 import s from "./index.module.scss";
-import { Section } from "@/components/reusedComponents";
+import { Preloader, Section } from "@/components/reusedComponents";
 
 const Converter = ({ ratesData }: Converter) => {
   const [rerender, setRerender] = useState(true);
@@ -44,7 +44,7 @@ const Converter = ({ ratesData }: Converter) => {
   }, [rerender]);
 
   if (!currenciesOptions) {
-    return <div>Loading... </div>;
+    return <Preloader type="blocking"/>;
   }
 
   return (

@@ -1,0 +1,21 @@
+@import "../../../../style/variables.module.scss";
+.wrapper {
+  padding: 1rem;
+
+  @media screen and (max-width: $sizeMB) {
+    width: 100%;
+  }
+}
+.cur {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+
+  &Item {
+    &Title {
+      color: $greyText;
+    }
+    &Value {
+    }
+  }
+}

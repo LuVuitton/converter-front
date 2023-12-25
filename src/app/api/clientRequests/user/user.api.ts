@@ -6,7 +6,7 @@ import { BASE_URL_MAIN } from "../..";
 export const userApiSlice = createApi({
   reducerPath: "userApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${BASE_URL_MAIN}/user`,
+    baseUrl: `${BASE_URL_MAIN}/auth`,
     prepareHeaders: (headers) => {
       const cookies = parseCookies();
       headers.set("Authorization", `Bearer ${cookies.nToken}`);

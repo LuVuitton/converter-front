@@ -1,6 +1,7 @@
 import cl from "classnames";
 import s from "./index.module.scss";
 import { NoContent } from "@/components/reusedComponents";
+import { useTranslations } from "next-intl";
 
 export const Favorites = ({
   favorites,
@@ -8,8 +9,9 @@ export const Favorites = ({
   setSelectedViaList,
   onChangeCurrency,
 }: Props) => {
+  const t = useTranslations("converter");
   if (favorites.length === 0) {
-    return <NoContent text="tut poka chto pusto, no ti mozesh dobavit do 6 currencyes to favorites" />;
+    return <NoContent text={t("favEmpty")} />;
   }
 
   const mappedFavorites = favorites.map((c) => {

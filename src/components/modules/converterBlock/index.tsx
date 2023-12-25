@@ -6,6 +6,7 @@ import ToFavoriteBtn from "./toFavoritesBtn";
 import { InputNumber } from "@/components/reusedComponents";
 import Favorites from "./favorites";
 import ConverterSelect from "./select";
+import { useTranslations } from "next-intl";
 
 const ConverterBlock = ({
   currency,
@@ -15,30 +16,35 @@ const ConverterBlock = ({
   currenciesOptions,
   favoritesChanged,
 }: ConverterBlockProps) => {
-  const [selectedViaList, setSelectedViaList] = useState(false);
+  const [selectedViaList, setSelectedViaList] = useState< boolean>(false);
   const { favorites, rest } = currenciesOptions;
+  const t = useTranslations("converter")
 
   const favoritesChangedHandler = () => {
     favoritesChanged();
     setSelectedViaList(false);
+
   };
 
   const currencyChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedViaList(false);
     onChangeCurrency(event.target.value);
+
+
   };
 
   return (
     <div className={s.cur}>
-      <div className={s.curDesc}>{"choose currency here"} </div>
+      <div className={s.curDesc}>{t("chooseCurrency")} </div>
 
       <ConverterSelect
         currency={currency}
         currencyChangeHandler={currencyChangeHandler}
         selectedViaList={selectedViaList}
         rest={rest}
+
       />
-      <div className={s.curDesc}> {"or from favorites"}</div>
+      <div className={s.curDesc}> {t("or")}</div>
       <Favorites
         currency={currency}
         favorites={favorites}
@@ -67,44 +73,3 @@ type ConverterBlockProps = {
   favoritesChanged: () => void;
 };
 
-{
-  /* <input
-        type="number"
-        onChange={(e) => onChangeValue(+e.target.value)}
-        value={value}
-        className={s.curInput}
-      /> */
-  // const mappedFavorites = favorites.map((c) => {
-  //   const isActiveClass = currency === c ? s.curFavoritesActive : "";
-  //   return (
-  //     <li
-  //       key={c}
-  //       onClick={() => {
-  //         setSelectedViaList(true);
-  //         onChangeCurrency(c);
-  //       }}
-  //       className={cl(s.curFavoritesItem, isActiveClass)}
-  //     >
-  //       {c}
-  //     </li>
-  //   );
-  // });
-  /* <ul className={s.curFavorites}>{mappedFavorites}</ul> */
-  // const mappedRest = [
-  //   <option key="default" value="choose">
-  //     {"choose currency"}
-  //   </option>,
-  //   ...rest.map((option) => (
-  //     <option key={option} value={option}>
-  //       {option}
-  //     </option>
-  //   )),
-  // ];
-  /* <select
-        onChange={currencyChangeHandler}
-        value={selectedViaList ? "" : currency}
-        className={s.curSelect}
-      >
-        {mappedRest}
-      </select> */
-}

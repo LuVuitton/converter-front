@@ -1,0 +1,11 @@
+@import '../../../../style/variables.module.scss';
+
+.desc {
+color: $blackText;
+margin-bottom: 1rem;
+}
+.btns {
+display: flex;
+gap: 1rem   ;
+justify-content: center;
+}

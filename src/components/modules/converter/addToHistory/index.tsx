@@ -1,10 +1,13 @@
 import { useAddHistoryMutation } from "@/app/api/clientRequests/histories/histories.api";
 import { Button } from "@/components/reusedComponents";
+import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import { toast } from "react-hot-toast";
 
 const AddToHistory = (data: Props) => {
-  const [addHisrory, { isLoading, isSuccess }] = useAddHistoryMutation();
+  const [addHisrory, { isLoading, isSuccess, isError }] =
+    useAddHistoryMutation();
+  const t = useTranslations("history");
 
   const AddToHistoryHandler = () => {
     addHisrory(data);
@@ -12,13 +15,17 @@ const AddToHistory = (data: Props) => {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success("succes");
+      toast.success(t("succesfulyAdded"));
     }
   }, [isSuccess]);
 
+  if (isError) {
+    toast.error(t("historySignInFirst"));
+  }
+
   return (
     <Button
-      btnText={"add to exchange history"}
+      btnText={t("addPair")}
       callback={AddToHistoryHandler}
       isLoading={isLoading}
     />

@@ -1,5 +1,7 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 import s from "./index.module.scss";
+import cl from "classnames";
+import { useTranslations } from "next-intl";
 
 const ConverterSelect = ({
   rest,
@@ -7,9 +9,10 @@ const ConverterSelect = ({
   currency,
   selectedViaList,
 }: Props) => {
+  const t = useTranslations("converter");
   const mappedRest = [
     <option key="default" value="choose">
-      {"choose currency"}
+      {t("chooseSelect")}
     </option>,
     ...rest.map((option) => (
       <option key={option} value={option}>
@@ -17,12 +20,11 @@ const ConverterSelect = ({
       </option>
     )),
   ];
-
   return (
     <select
       onChange={currencyChangeHandler}
       value={selectedViaList ? "" : currency}
-      className={s.select}
+      className={cl(s.select)}
     >
       {mappedRest}
     </select>

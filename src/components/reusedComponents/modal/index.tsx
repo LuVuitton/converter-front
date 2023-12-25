@@ -1,11 +1,12 @@
 import styles from "./index.module.scss";
+import cl from "classnames";
 
 const Modal: React.FC<Modal> = ({ show, onClose, children }) => {
   const modalClassName = show
-    ? `${styles.modalOverlay} ${styles.show}`
+    ? cl(styles.modalOverlay, styles.show)
     : styles.modalOverlay;
   const contentClassName = show
-    ? `${styles.modalContent} ${styles.show}`
+    ? cl(styles.modalContent, styles.show)
     : styles.modalContent;
 
   return (

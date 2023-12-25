@@ -16,6 +16,7 @@ import {
   ToAnotherAuth,
 } from "@/components/reusedComponents";
 import { Input } from "@/components/formComponents";
+import toast from "react-hot-toast";
 
 export default function SignIn() {
   const {
@@ -44,6 +45,13 @@ export default function SignIn() {
         const { userID, userRegistrationDate, username } = r;
         dispatch(setUserData({ userID, userRegistrationDate, username }));
         dispatch(setIsLogged({ isLogged: true, token: r.token }));
+      })
+      .catch((err) => {
+        if (err.data.statusCode === 401) {
+          toast.error("username or password is not correct");
+        } else {
+          toast.error("unexpected error");
+        }
       });
   };
 
@@ -61,7 +69,7 @@ export default function SignIn() {
             errorMessage={errors?.username?.message}
           />
           <Input
-            type={"text"}
+            type={"password"}
             register={register}
             registerName={"password"}
             placeholder={t("password")}

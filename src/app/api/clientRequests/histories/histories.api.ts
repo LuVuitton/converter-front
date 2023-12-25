@@ -12,9 +12,12 @@ export const historiesApiSlice = createApi({
       return headers;
     },
   }),
+  tagTypes: ["HISTORY"],
+
   endpoints: (builder) => ({
     getHistory: builder.query<GetHistory, void>({
       query: () => `/`,
+      providesTags: ["HISTORY"],
     }),
     addHistory: builder.mutation<AddHistory, AddHistoryDto>({
       query: (data) => ({
@@ -22,6 +25,7 @@ export const historiesApiSlice = createApi({
         method: "POST",
         body: data,
       }),
+      invalidatesTags: ["HISTORY"],
     }),
     removeHistory: builder.mutation<RemoveHistory, RemoveHistoryDto>({
       query: ({ historyItemID }) => ({

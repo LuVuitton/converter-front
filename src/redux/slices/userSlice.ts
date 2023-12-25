@@ -22,6 +22,7 @@ const userSlice = createSlice({
           path: "/",
         });
         state.data = null;
+
       } else if (action.payload.isLogged && action.payload.token) {
         setCookie(null, "nToken", action.payload.token, {
           maxAge: 30 * 24 * 60 * 60,

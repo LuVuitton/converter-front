@@ -23,7 +23,38 @@
       "passwordValidation": "Password needs number, upper, and lower case letter"
     }
   },
-  "header": {},
 
-  "footer": {}
+  "history": {
+    "signInFirst": "You have to sign in first",
+    "historySignInFirst": "To use history, you have to log in first",
+    "succesfulyRemoved": "Successfully removed",
+    "succesfulyAdded": "Successfully added",
+    "creationDate": "Creation date",
+    "beforeAdd": "Begin by adding a history first",
+    "histories": "Histories",
+    "addPair": "Add this currency pair to the history"
+  },
+  "converter": {
+    "chooseCurrency": "Choose currency here",
+    "or": "Or from favorites",
+    "chooseSelect": "Choose currency",
+    "favEmpty": "It's currently empty here, but you can add up to 6 favorite currencies.",
+    "add": "Add",
+    "remove": "Remove",
+    "toFav": "to favorites",
+    "fromFav": "from favorites",
+    "modal": "Do you want to replace the first currency in the list?",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "header": {
+    "logOut": "Log Out",
+    "signIn": "Sign In",
+    "myHistories": "My Histories",
+    "main": "Main"
+  },
+
+  "footer": {
+    "choose": "choose language"
+  }
 }

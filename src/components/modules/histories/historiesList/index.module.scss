@@ -1,0 +1,69 @@
+@import "../../../../style/variables.module.scss";
+
+.title {
+  padding: 0 1rem;
+}
+
+.table {
+  width: 100%;
+  &Item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $line;
+    &Cur {
+      flex: 1;
+      text-align: center;
+      max-width: 20vw;
+
+      &Curency {
+        font-size: 1.2rem;
+      }
+      &Value {
+        color: $green;
+        overflow-x: auto;
+      }
+
+      @media screen and (max-width: $sizeMB) {
+        max-width: 75px;
+      }
+    }
+    &CreationDate {
+      font-size: $textSmall;
+      color: $greyText;
+      text-align: center;
+    }
+    &Btn {
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+      transform: scale(var(--ggs, 1));
+      width: 22px;
+      height: 22px;
+      border: 2px solid;
+      border-radius: 22px;
+      background-color: $red;
+      color: $greyText;
+
+      &::before {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        width: 10px;
+        height: 2px;
+        background: currentColor;
+        border-radius: 5px;
+        top: 8px;
+        left: 4px;
+      }
+
+      &:hover {
+        background-color: rgba(203, 163, 163, 0.781);
+        color: $red;
+      }
+    }
+  }
+}

@@ -1,29 +1,60 @@
 {
   "auth": {
-    "signUp": "Sign Up",
-    "signIn": "Sign In",
-    "email": "Email",
-    "userName": "User Name",
-    "password": "Password",
-    "passwordConfirm": "Confirm Password",
-    "alreadyHaveAccount": "I already have an account. Log in",
-    "dontHaveAccount": "New here? Sign up",
-    "dontHaveAccountDesc": "(It's faster than you think)",
-    "regestrationTitle": "Registration",
-    "registrationDesc": "Here it is indeed fast",
-    "signInDesc": "There's a wild slogan here",
+    "signUp": "Зареєструватися",
+    "signIn": "Увійти",
+    "email": "Електронна пошта",
+    "userName": "Ім'я користувача",
+    "password": "Пароль",
+    "passwordConfirm": "Підтвердження паролю",
+    "alreadyHaveAccount": "Якщо у вас вже є акаунт, просто увійдіть.",
+    "dontHaveAccount": "Тут новий? Зареєструйтесь",
+    "dontHaveAccountDesc": "Якщо ви зареєструєтеся, ви зможете зберегти щось, я ще не вирішив що саме. Ми побачимо пізніше",
+    "registrationTitle": "Реєстрація",
+    "alreadyHaveAccountDesc": "Якщо ви зареєструєтеся, ви зможете зберегти щось, я ще не вирішив що саме. Ми побачимо пізніше",
+    "signInDesc": "Давайте щось зконвемо",
+    "signUpDesc": "Це означає, що ми реєструємося",
     "errors": {
-      "required": "This field is required",
-      "passwordMin": "Password should be at least 6 characters long",
-      "spaces": "Password should not contain spaces",
-      "invalidCharacters": "Password can contain Latin characters ",
-      "complexity": "Password should contain a-z, A-Z, 1-9",
-      "usernameMin": "User Name should be at least 3 characters long",
-      "usernameMax": "User Name should not exceed 50 characters",
-      "password-confirm": "Passwords must match"
+      "required": "Це поле обов'язкове",
+      "passwordMin": "Пароль повинен містити принаймні 6 символів",
+      "complexity": "Пароль повинен містити a-z, A-Z, 1-9",
+      "usernameMin": "Ім'я користувача повинне містити принаймні 3 символи",
+      "usernameMax": "Ім'я користувача не повинне перевищувати 20 символів",
+      "passwordConfirm": "Паролі повинні співпадати",
+      "passwordValidation": "Пароль повинен містити цифри, прописні та строчні літери"
     }
   },
-  "header": {},
 
-  "footer": {}
+  "history": {
+    "signInFirst": "Спершу вам потрібно увійти",
+    "historySignInFirst": "Щоб користуватися історією, спочатку вам потрібно увійти",
+    "succesfulyRemoved": "Успішно видалено",
+    "succesfulyAdded": "Успішно додано",
+    "creationDate": "Дата створення",
+    "beforeAdd": "Розпочніть з додавання історії спочатку",
+    "histories": "Історії",
+    "addPair": "Додайте цю валютну пару до історії"
+  },
+  "converter": {
+    "chooseCurrency": "Виберіть валюту тут",
+    "or": "Або з улюблених",
+    "chooseSelect": "Вибрати валюту",
+    "favEmpty": "Тут зараз порожньо, але ви можете додати до 6 улюблених валют.",
+    "add": "Додати",
+    "remove": "Видалити",
+    "toFav": "до улюблених",
+    "fromFav": "з улюблених",
+    "modal": "Ви хочете замінити першу валюту в списку?",
+    "yes": "Так",
+    "no": "Ні"
+  },
+  "header": {
+    "logOut": "Вийти",
+    "signIn": "Увійти",
+    "myHistories": "Мої Історії",
+    "main": "Головна"
+  },
+
+  "footer": {
+    "choose": "виберіть мову"
+  }
 }

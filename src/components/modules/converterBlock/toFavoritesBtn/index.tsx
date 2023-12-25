@@ -1,9 +1,12 @@
 import { Button, Modal } from "@/components/reusedComponents";
 import { currencyActions } from "@/helpers/favoritesCurrencyes";
 import { useState } from "react";
+import ModalChild from "../modalChild";
+import { useTranslations } from "next-intl";
 
 const ToFavoriteBtn = ({ favorites, currency, callback }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const t = useTranslations("converter");
 
   const addFavorite = () => {
     if (favorites.length >= 6) {
@@ -28,15 +31,15 @@ const ToFavoriteBtn = ({ favorites, currency, callback }: Props) => {
   };
 
   const isFavorite = favorites.includes(currency);
-  const btnText = isFavorite ? `remove ${currency} from favorites` : `add ${currency} to favorites`;
+  const btnText = isFavorite
+    ? `${t("remove")} ${currency} ${t("fromFav")}`
+    : `${t("add")} ${currency} ${t("toFav")}`;
   const btnCallback = isFavorite ? removeFavorite : addFavorite;
 
   return (
     <>
       <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <p>Do you want to replace the first currency in the list?</p>
-        <Button btnText="Yes" callback={() => handleModalResponse(true)} />
-        <Button btnText="No" callback={() => handleModalResponse(false)} />
+        <ModalChild handleModalResponse={handleModalResponse} />
       </Modal>
       <Button btnText={btnText} callback={btnCallback} />
     </>

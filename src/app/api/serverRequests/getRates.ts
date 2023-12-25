@@ -14,9 +14,6 @@ export async function getRates(): Promise<ExchangeRates> {
   return res.json();
 }
 
-// export async function getActualRates() {
-//   revalidateTag(RATES_TAG);
-// }
 
 
 export type ExchangeRates = {
