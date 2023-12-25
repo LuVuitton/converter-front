@@ -19,6 +19,7 @@
       position: relative;
       @include animatedHover($greenHover);
       margin-bottom: 0.5rem;
+      cursor: pointer;
     }
   }
 }

@@ -7,6 +7,7 @@
   border-radius: 50px;
   font-size: 1.1rem;
   transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
 
   &:active {
     background-color: $green;
