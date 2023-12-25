@@ -46,7 +46,7 @@ const Converter = ({ ratesData }: Converter) => {
   if (!currenciesOptions) {
     return <Preloader type="blocking"/>;
   }
-
+  
   return (
     <>
       <Section className={s.section}>
