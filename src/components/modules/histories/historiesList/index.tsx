@@ -28,7 +28,7 @@ const HistoriesList = ({ histories }: { histories: HistoryItem[] }) => {
 
   useEffect(() => {
     if (data && isSuccess) {
-      toast.success(t("succesfuly removed"));
+      toast.success(t("succesfulyRemoved"));
       const sortedHistList = histList.filter(
         (h) => h.historyItemID !== data.historyItemID
       );

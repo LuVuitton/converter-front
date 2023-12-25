@@ -38,6 +38,7 @@ export default async function RootLayout({
           <ReduxProvider>
 
               <div className={s.wrapper}>
+              <div className={s.bg}></div>
                 <Header />
                 <div className={s.wrapperContent}>{children}</div>
                 <Toaster position="top-right" />
